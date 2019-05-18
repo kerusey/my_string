@@ -25,7 +25,13 @@ protected:
 
 public:
 	//constructor
-	string() {}
+	string(size_t sizeI) {
+        size = sizeI;
+        for(int i = 0 ; i < size ; i++)
+        std::cin >> my_string[i];
+        capacity = 2*size;
+        
+}
 	//destructor
 	~string() {}
 
