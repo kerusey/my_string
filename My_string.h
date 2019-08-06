@@ -1,39 +1,47 @@
 #pragma once
 
-size_t get_string_size(char* my_string) {}
-void input(char* cashe) {} //python-like input
-
-
 class string {
 
-protected:
-
-	size_t capacity;
-	size_t size;
-	char* my_string;
-
+  char *__string__;
+  unsigned int sz;
+  unsigned int cap;
+  
 public:
-	//constructor
-	string() {}
-	//destructor
-	~string() {}
 
-	string operator+ (char* donar) {}
+  string ();
 
-	string double_string() {} // doubles capacity, size and copy data to new string
-	void print() {} // prints char array
-	void randomstring() {} // initialize new random string
-	bool empty() {} // check emptyness
-	void erase() {} // erase 1 element
-	void erasemn() {} // erase diapason
-	bool find() {}
-	void insert() {}
-	void copy() {}
-	void swap() {}
-	void convert() {}
+  unsigned int size ();
 
-	char* mystring() {}
-	size_t mycapacity() {}
-	size_t mysize() {}
+  unsigned int capacity ();
+
+  char get_char (unsigned int num);
+
+  string get_substring (unsigned int lval = 0, unsigned int rval = size);
+
+  void reserve (unsigned int _add_cap);
+
+  bool empty ();
+
+  void clear ();
+
+  void push_back (char _char);
+
+  void push_top (char _char);
+
+  char pop_top ();
+
+  char pop_back ();
+
+  void insert (char _char, unsigned int _place);
+
+  void replace (unsigned int pos, unsigned int len, string& _cashe_string);
+
+  string& operator= (string& _cashe_string);
+
+  string& operator+= (string& _cashe_string);
+  
+  bool operator== (string& _cashe_string1); 
+  
+  ~string ();
+  
 };
-
